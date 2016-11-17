@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+
+    <link rel='stylesheet' href='/css/style.css' />
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
+
+    <script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.2/lodash.min.js'></script>
+
+    <script src='/js/week.js'></script>
+    <script src='/js/group.js'></script>
+    <script src='/js/history.js'></script>
+    <script src='/js/board.js'></script>
+    <script src='/js/picker.js'></script>
+    <script src='/js/index.js'></script>
+
+  </head>
+  <body>
+    <h1><%= title %></h1>
+
+    <div class="form-inline text-center">
+      <div class="form-group">
+        <input type="text" class="form-control input-lg" id="txtSize" placeholder="몇 명을?">
+        <span style="font-size: 30px"></span>
+        <button type="button" class="btn btn-default btn-lg" id="btnPick">
+          뽑기!
+        </button>
+      </div>
+      <div>
+          <span id="lbRemainCount">0</span>
+      </div>
+    </div>
+
+    <table class="table" id="board">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>구성원</th>
+          <th>종류</th>
+        </tr>
+      </thead>
+    </table>
+  </body>
+</html>
