@@ -10,7 +10,7 @@
   <script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.2/lodash.min.js'></script>
-
+  <script src='/js/mousetrap.min.js'></script>
   <script src='/js/modal.js'></script>
   <script src='/js/week.js'></script>
   <script src='/js/group.js'></script>
@@ -63,6 +63,11 @@
       </div>
     </div>
   </div>
+  <script>
+    Mousetrap.bind('/', function(){
+      alert('test');
+    });
+  </script>
 </body>
 
 </html>
