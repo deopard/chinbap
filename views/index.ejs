@@ -11,6 +11,7 @@
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.2/lodash.min.js'></script>
 
+  <script src='/js/fullModal.js'></script>
   <script src='/js/modal.js'></script>
   <script src='/js/week.js'></script>
   <script src='/js/group.js'></script>
@@ -45,6 +46,22 @@
       </tr>
     </thead>
   </table>
+
+  <div id="startModal">
+    <div class="startModalContainer">
+      <div>2016년 11월 22일~26일 친밥</div>
+      <button class="btn btn-default btn-lg" id="btnStart">시작하기</button>
+    </div>
+  </div>
+
+  <div id="fullModal">
+    <div class="fullModalContainer">
+      <div class="title"></div>
+      <div class="content"></div>
+      <div class="loading"></div>
+      <button id="btnFullModalClose" class="btn btn-default btn-lg">닫기</button>
+    </div>
+  </div>
 
   <!-- Modal -->
   <div class="modal fade" id="alertModal" tabindex="-1" role="dialog">

@@ -13,3 +13,39 @@ body {
 a {
     color: #00B7FF;
 }
+
+#startModal,
+#fullModal {
+    display: none;
+    background: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+#startModal {
+    font-size: 60px;
+}
+
+#startModal>.startModalContainer,
+#fullModal>.fullModalContainer {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+#fullModal>.fullModalContainer>.title {
+    font-size: 50px;
+}
+
+#fullModal>.fullModalContainer>.content {
+    margin: 30px 0 60px 0;
+}

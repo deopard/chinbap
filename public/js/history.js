@@ -1,8 +1,14 @@
 $(() => {
     let chinbapHistory = {
+        // 2016년 11월 21~25일 친밥
         w1121: new Week(
             [
-                new Group(['안동건', '조현규'], 'pick')
+                // 최타파
+                new Group(['최재호', '백재현'], 'choi'),
+
+                // 사전 신청
+                new Group(['안동건', '조현규'], 'pick'),
+                new Group(['강민석', '김혜원'], 'pick')
             ]
         ),
         // 2016년 11월 14~18일 친밥

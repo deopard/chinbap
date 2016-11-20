@@ -17,15 +17,31 @@ $(() => {
         }
 
         notify(group) {
-            let msg = '';
+            let title = '';
             if (group.type == 'destiny') {
-                msg = `축하합니다!`;
+                title = `축하합니다!`;
             } else if (group.type == 'choi') {
-                msg = `최재호의 파워 타임~~`;
+                title = '최재호의 파워타임!!';
             } else if (group.type == 'pick') {
-                msg = `사전신청!!`;
+                title = `사전신청!!`;
             }
-            Modal.show(msg + `<br/>${this.getImages(group)}`);
+
+            fullModal.showLoading(group.people.length);
+            let loadingCount = 30;
+            let currentLoadingCount = 0;
+            let interval = setInterval(() => {
+                fullModal.showLoading(group.people.length);
+                if (currentLoadingCount++ == loadingCount) {
+                    fullModal.show(title, this.getImages(group));
+                    clearInterval(interval);
+                }
+            }, 50);
+        }
+
+        loadingContent(size) {
+            let people = _.sampleSize(picker.candidatePeople, size);
+            let group = new Group(people);
+            return this.getImages(group);
         }
 
         getImages(group) {
@@ -45,6 +61,10 @@ $(() => {
             if (type == 'choi') return '최타파';
             if (type == 'pick') return '사전신청';
             return '?';
+        }
+
+        sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
         }
     }
 

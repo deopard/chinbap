@@ -1,5 +1,5 @@
 $(() => {
-    const dramaPeople = [
+    const DRAMA_PEOPLE = [
         '김선', '김종옥', '이승영', '이승민',
         '이희덕', '정승은', '이중훈', '박종호',
         '김인애', '권민자', '김희중', '정주경',
@@ -54,10 +54,14 @@ $(() => {
         }
 
         refreshRemainCount() {
-            this.candidatePeople = _.difference(dramaPeople, chinbapHistory[this.week].allPeople);
             $('#lbRemainCount').html(this.candidatePeople.length);
+        }
+
+        get candidatePeople() {
+            return _.difference(DRAMA_PEOPLE, chinbapHistory[this.week].allPeople);
         }
     }
 
+    window.DRAMA_PEOPLE = DRAMA_PEOPLE;
     window.Picker = Picker;
 });

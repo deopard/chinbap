@@ -2,10 +2,26 @@ $(() => {
     const week = 'w1121';
     window.board = new Board();
     window.picker = new Picker(week);
+    window.fullModal = new FullModal();
 
-    for (let group of chinbapHistory[week].groups) {
-        board.addGroup(group);
-    }
+    let preGroups = chinbapHistory[week].groups.slice();
+
+    $('#startModal').show();
+    $('#btnStart').click(() => {
+        let preGroup = preGroups.shift();
+        board.addGroup(preGroup);
+        $('#startModal').hide();
+    });
+
+    $('#btnFullModalClose').click(() => {
+        console.log(preGroups);
+        if (preGroups.length > 0) {
+            let preGroup = preGroups.shift();
+            board.addGroup(preGroup);
+        } else {
+            fullModal.hide();
+        }
+    });
 
     $('#btnPick').click(() => {
         let count = parseInt($('#txtSize').val());;
