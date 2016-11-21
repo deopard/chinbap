@@ -25,6 +25,9 @@ $(() => {
 
     $('#btnPick').click(() => {
         let count = parseInt($('#txtSize').val());;
+        if (!(count > 0 && count < 10)) {
+            return;
+        }
         picker.pick(count);
     });
 });

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
+  <link rel='stylesheet' href='/css/flipclock.css' />
+  <link rel='stylesheet' href='/css/style.css' />
+  <script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>
+  <script src='/js/flipclock.min.js'></script>
+  <script>
+    $(() => {
+      var clock = $('.clock').FlipClock(40, {
+        countdown: true,
+        clockFace: 'MinuteCounter',
+        autoStart: false
+      });
+
+      $('#btnStartCountDown').click(() => {
+        clock.start();
+      });
+    });
+  </script>
+</head>
+
+<body class="clock-bg">
+  <h1>
+    <%= title %>
+  </h1>
+
+  <div class="content">
+    <button id="btnStartCountDown" class="btn btn-default btn-lg">시작</button>
+    <div class="clock"></div>
+    <div class="movie">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/iPUmE-tne5U" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</body>
+
+</html>

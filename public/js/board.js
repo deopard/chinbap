@@ -9,7 +9,7 @@ $(() => {
             $('#board').append(`
               <tr>
                 <td>${this.index}</td>
-                <td class="text-center">${this.getImages(group)}</td>
+                <td>${this.getImages(group)}</td>
                 <td>${this.getType(group.type)}</td>
               </tr>
             `);
